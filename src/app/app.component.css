@@ -1,0 +1,20 @@
+.center{
+  margin: auto;
+  text-align: center;
+}
+.button{
+  width: 300px;
+}
+.regularCharactersTable{
+  width: 200px;
+  margin: auto;
+}
+.bottomDiv{
+    poition: absolute;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+}

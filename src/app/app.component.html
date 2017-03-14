@@ -1,3 +1,70 @@
-<h1>
-  {{title}}
-</h1>
+<div class="center">
+  <button class="button" type="button" name="button" (click)="changeVisibility()">{{buttonCaption}}</button>
+</div>
+<br>
+<div *ngIf="contentIsVisible"  >
+  <h1 class="center">
+    {{forceUserstitle}}
+  </h1>
+  <br>
+  <table class="center">
+    <tr>
+      <th>{{jediListTitle}}</th>
+      <th>{{sithListTitle}}</th>
+    </tr>
+    <tr>
+      <td>
+        <ul>
+        	<li *ngFor="let curJedi of jediListSevice.getList()"
+        		 (click)="onCharacterClick(curJedi)">
+             {{curJedi.name}}
+             <app-light-saber [color]="curJedi.lightSaberColor"></app-light-saber>
+        	</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li *ngFor="let curSith of sithListSevice.getList()"
+        		 (click)="onCharacterClick(curSith)">
+             {{curSith.name}}
+             <app-light-saber [color]="curSith.lightSaberColor"></app-light-saber>
+        	</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <h1 class="center">
+    {{regularCharacterstitle}}
+  </h1>
+  <br>
+  <div class="regularCharactersTable">
+    <ul>
+      <li *ngFor="let char of regularCharactersList"
+        (click)="onCharacterClick(char)">
+         {{char.name}}
+      </li>
+    </ul>
+  </div>
+  <br>
+  <br>
+  <table class="center" *ngIf="getFirstContestantName() != ''">
+    <tr>
+      <td>{{getFirstContestantName()}}</td>
+      <td>VS</td>
+      <td>{{getSecondContestantName()}}</td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <h2  class="center" *ngIf="winner !== ''">
+    Winner is {{winner}}
+  </h2>
+  <br>
+  <h2  class="center" *ngIf="winner !== ''">
+    {{comment}}
+  </h2>
+  <div class="bottomDiv">
+    <h2>{{instructions}}</h2>
+  </div>
+</div>
