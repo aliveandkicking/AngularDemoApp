@@ -51,14 +51,23 @@
   <table class="center" *ngIf="getFirstContestantName() != ''">
     <tr>
       <td>{{getFirstContestantName()}}</td>
-      <td>VS</td>
+      <td></td>
       <td>{{getSecondContestantName()}}</td>
+    </tr>
+    <tr>
+      <td>
+        <img class="image" [src]="getFirstContestantImage()" alt="">
+      </td>
+      <td>VS</td>
+      <td class="image">
+        <img class="image" [src]="getSecondContestantImage()" alt="">
+      </td>
     </tr>
   </table>
   <br>
   <br>
   <h2  class="center" *ngIf="winner !== ''">
-    Winner is {{winner}}
+    The Winner is {{winner}}
   </h2>
   <br>
   <h2  class="center" *ngIf="winner !== ''">

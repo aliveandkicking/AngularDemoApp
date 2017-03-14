@@ -1,21 +1,14 @@
 import { Injectable } from '@angular/core';
-
-class Jedi{
-  constructor(
-    public name: string,
-    public power: number,
-    public lightSaberColor: string = '#5588FF'
-  ){}
-};
+import { Jedi } from './jedi.class';
 
 @Injectable()
 export class JediListSevice {
   getList() {
 		return [
-			new Jedi('Luke', 83, '#77EE22'),
-			new Jedi('Obi-Van', 90),
-			new Jedi('Yoda', 95, '#33EE22'),
-			new Jedi('Windu', 92, '#AA22FF')
+			new Jedi('Luke', 83, 'luke.jpg', '#77EE22'),
+			new Jedi('Obi-Van', 90, 'obi.jpg', '#5588FF'),
+			new Jedi('Yoda', 95, 'yoda.jpg', '#33EE22'),
+			new Jedi('Windu', 92, 'windu.jpg', '#AA22FF')
 		];
 	}
 }

@@ -1,21 +1,14 @@
 import { Injectable } from '@angular/core';
-
-class Sith{
-  constructor(
-    public name: string,
-    public power: number,
-    public lightSaberColor: string = '#FF5555'
-  ){}
-};
+import { Jedi } from './jedi.class';
 
 @Injectable()
 export class SithListSevice {
   getList() {
 		return [
-			new Sith('Maul', 85),
-			new Sith('Tyranus', 88),
-			new Sith('Vader', 92),
-			new Sith('Sidious', 97)
+			new Jedi('Maul', 85, 'maul.jpg', '#FF3333'),
+			new Jedi('Tyranus', 88, 'duku.jpg', '#FF3333'),
+			new Jedi('Vader', 92, 'vader.jpg', '#FF3333'),
+			new Jedi('Sidious', 97, 'sid.jpg', '#FF3333')
 		];
 	}
 }

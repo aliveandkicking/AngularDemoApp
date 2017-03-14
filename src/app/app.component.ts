@@ -1,28 +1,14 @@
 import { Component } from '@angular/core';
 import { JediListSevice } from './app.jedilist.service';
 import { SithListSevice } from './app.sithlist.service';
+import { Character } from './character.class';
 
 const regularCharacters = [
-  {
-    name:'Han Solo',
-    power: 45
-  },
-  {
-    name:'Leia Organa',
-    power: 10
-  },
-  {
-    name:'Chewbacca',
-    power: 39
-  },
-  {
-    name:'C-3PO',
-    power: 0
-  },
-  {
-    name:'R2-D2',
-    power: 1
-  }
+  new Character('Han Solo', 45, 'han.jpg'),
+  new Character('Leia Organa', 12, 'leia.jpg'),
+  new Character('Chewbacca', 39, 'chew.jpg'),
+  new Character('C-3PO', 0, 'c3po.jpg'),
+  new Character('R2-D2', 1, 'r2d2.jpg')
 ]
 
 @Component({
@@ -81,12 +67,26 @@ export class AppComponent {
     }
   }
 
+  getImagePath(image: string){
+    return './img/'+image
+  }
+
   getFirstContestantName(){
     return (this.firstContestant ? this.firstContestant.name : '')
   }
 
+ imagePath = './src/app/img/';
+
   getSecondContestantName(){
     return (this.secondContestant ? this.secondContestant.name : '')
+  }
+
+  getFirstContestantImage(){
+    return (this.firstContestant ? this.imagePath + this.firstContestant.img : '')
+  }
+
+  getSecondContestantImage(){
+    return (this.secondContestant ? this.imagePath + this.secondContestant.img : '')
   }
 
   changeVisibility(){
